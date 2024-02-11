@@ -30,7 +30,7 @@ module.exports = {
         text2: 'rgba(34, 34, 34, .7)',
         border: 'rgba(0, 0, 0, .05)',
         blue: '#4c95f7',
-        blueHover: '#3f7bcc'  //colors set for further use in the website
+        blueHover: '#3f7bcc' 
       }
     },
   },

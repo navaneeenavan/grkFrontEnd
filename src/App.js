@@ -9,11 +9,26 @@ import Footer from "./components/footer";
 import OverlayButton from "./components/overlay";
 function App() {
   return (
-    <main className=" max-w-[1480px] ml-auto mr-auto">
+    <main className=" max-w-[1480px] mx-auto">
       <Navbar />
       <Hero />
       <Research />
       <Activity />
+      <About />
+      <OverlayButton />
+      <Footer />
+      <About />
+      <OverlayButton />
+      <Footer />
+      <About />
+      <OverlayButton />
+      <Footer />
+      <About />
+      <OverlayButton />
+      <Footer />
+      <About />
+      <OverlayButton />
+      <Footer />
       <About />
       <OverlayButton />
       <Footer />
