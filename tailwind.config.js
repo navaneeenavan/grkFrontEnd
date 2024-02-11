@@ -3,7 +3,23 @@ module.exports = {
   mode: "jit",
   purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
   theme: {
+    fontFamily:{
+      'font1': ['Inter Tight', 'Helvetica', 'Arial', 'sans-serif'],
+    },
     extend: {
+
+      screens:{
+        'xsm' : '300px'
+      },
+
+      height:{
+        'gap1':'92px',
+      },
+      
+      fontWeight:{
+        '200': 200,
+      },
+
       colors : {
         bg: '#fafafa',
         text1: '#222',
