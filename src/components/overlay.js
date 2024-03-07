@@ -10,13 +10,13 @@ const OverlayButton = () => {
   return (
     <div className="xsm:fixed md:bottom-6 md:right-6 sm:bottom-8 sm:right-8 xsm:bottom-4 xsm:right-4">
       <button
-        className="bg-[#636359] grid place-content-center text-white w-[70px] h-[70px] px-4 py-2 rounded-[50%] shadow-md transition duration-300 ease-in-out"
+        className="bg-[#636359] grid place-content-center text-white w-[50px] h-[50px] px-4 py-2 rounded-[50%] shadow-md transition duration-300 ease-in-out"
         onClick={toggleOverlay}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="44"
-          height="44"
+          width="22"
+          height="22"
           viewBox="0 0 24 24"
         >
           <path
@@ -29,13 +29,13 @@ const OverlayButton = () => {
       </button>
       {isOpen && (
         <div
-          className="absolute bottom-16 right-0 bg-white border border-gray-300 rounded-[30px] shadow-md transition duration-300 ease-in-out mb-5"
+          className="absolute bottom-16 right-0 bg-white border border-gray-300 rounded-[30px] shadow-md transition duration-300 ease-in-out "
           style={{ transformOrigin: "top", transform: "scaleY(1)" }}
         >
           <ul className="list-none p-4 w-[300px]">
             <li className=" py-2 px-4" onClick={toggleOverlay}>
               <div>
-                <h3 className="font-bold">Lets chat..!</h3>
+                <h3 className="font-bold">Facing issues ma'am ?</h3>
                 <span>We normally reply within 12 hours.</span>
               </div>
             </li>

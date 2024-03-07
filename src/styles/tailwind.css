@@ -1,3 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.gradient-bg {
+    background-image: linear-gradient(180deg, #F9B737 0%, #DB899C 100%), linear-gradient(180deg, #436CE3 0%, #8495CE 51.77%, #F3DBA9 100%);
+    background-size: 100% 100%;
+  }
