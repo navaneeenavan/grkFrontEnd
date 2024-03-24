@@ -16,6 +16,7 @@ function App() {
       <Hero className= "mt-10" />
       <Card className="ml-10"/>
       {/* <RegistrationForm/> */}
+      <Footer />
     </div>
 
     
