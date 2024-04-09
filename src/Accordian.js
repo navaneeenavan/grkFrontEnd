@@ -1,3 +1,5 @@
+import { AiOutlinePlus } from "react-icons/ai";
+
 const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
     return (
       <div className="w-full">
@@ -47,7 +49,7 @@ const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
     },
     {
       question:
-        "Do we have to pay separately for attending workshops?",
+        "What are your office hours and preferred methods of communication for students seeking academic support or guidance?",
       answer:
         "Yes, we have to pay separately for each workshop. The general registration fee doesn’t cover workshop participation.",
     },
@@ -55,7 +57,7 @@ const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
 function Accordian() {
     return (
         <div>
-            
+           
         </div>
     )
 }

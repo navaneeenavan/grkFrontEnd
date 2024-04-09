@@ -10,19 +10,11 @@ function hero() {
       </div>
       <div>
         <div className="flex flex-col lg:flex-row">
-          <div className="text-4xl text-left text-[#222222] ">
-            loremEu quis velit culpa ea consectetur duis.Mollit voluptate non
-            amet id nulla in. Laboris aliqua magna amet sint laborum ad.
-            Consequat nisi nostrud culpa occaecat sunt id. Veniam pariatur
-            mollit veniam deserunt commodo {"->"}{" "}
+          <div className="text-4xl max-w-[1000px] text-left text-[#222222] ">
+          G R Karpagam is a Professor with 26 years of experience in the Department of Computer Science and Engineering at PSG College of Technology. Her research interest includes areas related to Artificial Intelligence, Machine Learning, Service Oriented Architecture and Blockchain.{"->"}{" "}
           </div>
           <div className=" text-left text-xl  text-gray-500 mt-5 lg:mt-0">
-            <span className="text-[#222222]">Miles to go Until I Sleep</span>{" "}
-            This is <span className="text-black">Dr G R Karpagam </span> For
-            you...{" "}
-            <span className="text-[#222222]">Mile to go Until I Sleep</span>{" "}
-            This is <span className="text-black">Dr G R Karpagam </span> For
-            you...
+            
             <span className="text-[#222222]">
               Mile to go Until I Sleep
             </span>{" "}

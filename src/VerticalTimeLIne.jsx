@@ -66,73 +66,103 @@ const VerticalAbout = () => {
 
 const experiences = [
     {
-      title: "OSINT",
-      company_name: "Head:Aswath Harish",
+      title: "Lecturer",
+      company_name: "PSG College of Technology",
     
       iconBg: "#fffff",
-      date: "March 2020 - Present",
+      date: "February - 1997 ",
       points: [
-        "The OSINT (Open Source INTelligence) Team, headed by Aswath Harish is responsible for contributing to already-existing open source intelligence projects to improve the world of Cybersecurity. Click the title to see tools published by our set of skilled OSINT developers on GitHub.",
+        "Mentoring students through teaching and project guidance",
       ],
     },
     {
-      title: "Intel",
-      company_name: "Head:Ashwant Krishna",
+      title: "Cognizant Open Source Laboratory",
+      company_name: "PSG College of Technology",
     
       iconBg: "#fffff",
-      date: "Jan 2021 - Feb 2022",
+      date: "June - 2004",
       points: [
-        "The Intel Team, headed by Ashwant Krishna, develops cybersecurity solutions for proprietary use within The Eye based on Python and the NMap Scripting Language for already-available tools like Maltego, NMap and other custom tools created by The Eye. Click the title to see any tools published by our set of skilled intelligence developers.",
+        "Mentoring through OSI projects industry collaboration and course in curriculum. 30 batch of students opted and resulted in good placement.",
       ],
     },
     {
-      title: "Oculus UI",
-      company_name: "Head: Navaneetha Krishnan K S ",
+      title: "PSG-CORDYS SOA Laboratory",
+      company_name: "PSG College of Technology",
    
       iconBg: "#fffff",
-      date: "Jan 2022 - present",
+      date: "August - 2007",
       points: [
-        "Oculus UI, headed by Navaneetha Krishnan S is a secure coding project under the web development stream, simplifying the everyday club tasks within The Eye - for internal usage.",
+        "Course on web services SOA introduced, 30 student ambassadors 10 faculty were mentored carried out remote internships. Trained students placed in top MNCs.",
       ],
     },
     {
-      title: "Training",
-      company_name: "Head:Swetha M ",
+      title: "PSG-CORDYS Cloud Computing Laboratory",
+      company_name: "PSG College of Technology",
      
       iconBg: "#fffff",
-      date: "Jan 2023 - Present",
+      date: "July - 2009",
       points: [
-        "The Training Team, coordinated by Swetha M, consists of a few core members - who organize self assessment-based cybersecurity training programmes exclusive to all the members of The Eye.",
+        "Course on Cloud introduced. 30 student ambassadors and 10 faculty trained won in National level contests, carried out remote internships. Cordys,Vanenburg offered Placements, mentees placed in top MNCs.",
       ],
     },
     {
-      title: "Events and Social Media",
-      company_name: "Head:Dhanush Gowthaman ",
+      title: "Iaas Data Center funded by AICTE RPS",
+      company_name: "PSG College of Technology",
 
       iconBg: "#fffff",
-      date: "Jan 2023 - Present",
+      date: "July - 2014",
       points: [
-        'The Eye organizes cybersecurity-based events in order to spread awareness - like workshops, hackathons and treasure-hunts. The Events and Social Media team, headed by Dhanush Gowdhaman, are responsible for ideating and conducting events, as well as handling the Social Media handles of The Eye.'
+        '10 Papers published, Course on Cloud computing handled by investigators, 5 PhDs were producedbased on the work.'
       ],
     },
     {
-      title: "Documentation",
-      company_name: "Head: Adithya Rengarajan ",
+      title: "PSG-Impiger Center for AIR",
+      company_name: "PSG Collge of Technology",
      
       iconBg: "#fffff",
-      date: "Jan 2023 - Present",
+      date: "July - 2019",
       points: [
-        'The Documentation Team is responsible for writing and creating articles, research-work, and more relevant document-related tasks. There are 3 projects under the documentation team, headed by Aaditya Rengarajan - namely - the Case Study project where the team aims to work on case studies of security incidents worldwide, the Research Project where the team aims to perform R&D and write a research paper on something new, and the Articles Project where the team aims to write Security Guidelines, Quarterly Reports and Whitepapers for the club.'
+        '30 faculty trained. 50+ Students given remote internships. Post graduate certificate course in “Data analytics and management in Bioinformatics” funded by DBT (90.25 L) was handled in this Center.'
       ],
     },
     {
-      title: "Youtube",
-      company_name: "Head:Rohith Sundaramurthy  ",
-    
+      title: "PSG-HPE Center for Teaching & Experiencing Security & Infrastructure",
+      company_name: "PSG Collge of Technology",
+     
       iconBg: "#fffff",
-      date: "Jan 2023 - Present",
+      date: "July - 2019",
       points: [
-        'The YouTube Team, headed by Rohith Sundharamurthy, works on YouTube videos to be released on the YouTube platform under The Eye.'
+        'Mobile Apps Sklanot Exordium developed (Google playstore). Students placed in top MNCs. Publications, Credits in App (evidences of mentoring). Version 2 in progress'
+      ],
+    },
+    {
+      title: "Professor In-Charge Library",
+      company_name: "PSG Collge of Technology",
+     
+      iconBg: "#fffff",
+      date: "July - 2019",
+      points: [
+        'Automation during Covid, Mobile APP Development, Internship programme , Mentoring in Organizing programmes'
+      ],
+    },
+    {
+      title: "DST CSRI Grant",
+      company_name: "PSG Collge of Technology",
+     
+      iconBg: "#fffff",
+      date: "September - 2021",
+      points: [
+        'Design and development of AI powered cognitive remediation therapy through gaming for schizophrenia patients. Mentored through collaborations Publications, best project awards'
+      ],
+    },
+    {
+      title: "New BE CSE( AI & ML) programme",
+      company_name: "PSG Collge of Technology",
+     
+      iconBg: "#fffff",
+      date: "June - 2022",
+      points: [
+        'Mentoring Students as Professor, Programme Coordinator, Involving students in projects publications and Designing Specialized Centers.'
       ],
     },
   ];

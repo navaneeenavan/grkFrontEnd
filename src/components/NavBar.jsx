@@ -9,7 +9,7 @@ function NavBar() {
            
            <div className="lg:flex ml-5 "> 
             <ul className="space-x-5 text-black flex flex-row text-xs lg:text-lg" >
-                <li
+                <li className="hover:cursor-pointer"
                 onClick={(e) => {
                     const element = document.getElementById("Home");
                     element.scrollIntoView({ behavior: "smooth" });
@@ -17,21 +17,21 @@ function NavBar() {
                   >
                     Home
                 </li> 
-                <li
+                <li className="hover:cursor-pointer"
                  onClick={(e) => {
                     const element = document.getElementById("Research");
                     element.scrollIntoView({ behavior: "smooth" });
                   }}>
                     Research
                 </li>
-                <li
+                <li className="hover:cursor-pointer"
                  onClick={(e) => {
                     const element = document.getElementById("About");
                     element.scrollIntoView({ behavior: "smooth" });
                   }}>
                     About
                 </li>
-                <li
+                <li className="hover:cursor-pointer"
                  onClick={(e) => {
                     const element = document.getElementById("Lectures");
                     element.scrollIntoView({ behavior: "smooth" });

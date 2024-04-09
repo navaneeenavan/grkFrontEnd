@@ -45,9 +45,9 @@ function Lectures() {
 
   return (
     <div className=" lg:px-36 flex flex-col">
-      <div className="text-2xl font-regular">This is a Lectures</div>
+      
       <div className="h-10 w-full border border-1 mt-10 rounded-full  items-center">
-        <ul className="flex justify-between items-center">
+        <ul className="flex justify-between items-center hover:cursor-pointer">
           <li
             className={`w-full text-sm md:text-xl px-3 rounded-full items-center  text-center text-black h-10 flex justify-center ${
               dataStructure ? "bg-black bg-opacity-5 " : "text-black"
@@ -79,43 +79,14 @@ function Lectures() {
           <>
             <div className="px-10 mb-10">
               <div className="text-xl font-regular mt-2">
-                Course Name : dataStructures and Alogorithms
+                Course Name : Data Structures and Alogorithms
               </div>
               <div className="space-y-10 mt-2">
                 <div>
                   <h3 className="font-regular">Decription About the Course</h3>
-                  <p>
-                    Labore incididunt voluptate culpa cillum cupidatat voluptate
-                    ea. Velit est nulla ad voluptate labore proident dolor in
-                    pariatur ut in. Enim nulla pariatur veniam consequat culpa
-                    laboris fugiat proident sint nisi ipsum id minim. Ullamco
-                    eiusmod laborum cupidatat ullamco aliquip magna magna
-                    excepteur adipisicing est. Ipsum et ipsum magna mollit
-                    eiusmod voluptate excepteur adipisicing esse irure.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-regular">Decription About the Course</h3>
-                  <p>
-                    Labore incididunt voluptate culpa cillum cupidatat voluptate
-                    ea. Velit est nulla ad voluptate labore proident dolor in
-                    pariatur ut in. Enim nulla pariatur veniam consequat culpa
-                    laboris fugiat proident sint nisi ipsum id minim. Ullamco
-                    eiusmod laborum cupidatat ullamco aliquip magna magna
-                    excepteur adipisicing est. Ipsum et ipsum magna mollit
-                    eiusmod voluptate excepteur adipisicing esse irure.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-regular">Decription About the Course</h3>
-                  <p>
-                    Labore incididunt voluptate culpa cillum cupidatat voluptate
-                    ea. Velit est nulla ad voluptate labore proident dolor in
-                    pariatur ut in. Enim nulla pariatur veniam consequat culpa
-                    laboris fugiat proident sint nisi ipsum id minim. Ullamco
-                    eiusmod laborum cupidatat ullamco aliquip magna magna
-                    excepteur adipisicing est. Ipsum et ipsum magna mollit
-                    eiusmod voluptate excepteur adipisicing esse irure.
+                  <br></br>
+                  <p>    
+                  Data structures are methods of organizing and storing data efficiently, such as arrays, linked lists, stacks, queues, trees, and graphs. Algorithms are step-by-step procedures for solving computational problems, including sorting, searching, graph traversal, dynamic programming, recursion, and divide-and-conquer techniques. Understanding these concepts is essential for efficient coding and problem-solving in computer science.
                   </p>
                 </div>
               </div>
@@ -123,9 +94,7 @@ function Lectures() {
               <div className="w-full h-auto lg:space-x-5 space-y-3 flex flex-col lg:flex-row justify-between mt-7">
                 <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
                   <div className="font-regular ml-10">
-                    Elit cupidatat cillum quis eiusmod irure excepteur ipsum
-                    adipisicing laborum. Elit cupidatat cillum quis eiusmod
-                    irure excepteur ipsum adipisicing laborum
+                  Unlocking Efficiency: Harnessing Data Structures and Algorithms for Optimal Performance.
                   </div>
                   <div className=" h-full flex flex-col justify-end ">
                     <button className="h-6 w-7 rounded-full border item-center flex justify-center">
@@ -138,9 +107,7 @@ function Lectures() {
                 </div>
                 <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
                   <div className="font-regular ml-10">
-                    Elit cupidatat cillum quis eiusmod irure excepteur ipsum
-                    adipisicing laborum. Elit cupidatat cillum quis eiusmod
-                    irure excepteur ipsum adipisicing laborum
+                  Building Tomorrow's Solutions Today: Empowering Innovation Through Data Structures and Algorithms.
                   </div>
                   <div className=" h-full flex flex-col justify-end ">
                     <button className="h-6 w-7 rounded-full border item-center flex justify-center">
@@ -153,9 +120,7 @@ function Lectures() {
                 </div>
                 <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
                   <div className="font-regular ml-10">
-                    Elit cupidatat cillum quis eiusmod irure excepteur ipsum
-                    adipisicing laborum. Elit cupidatat cillum quis eiusmod
-                    irure excepteur ipsum adipisicing laborum
+                  From Complexity to Clarity: Navigating Digital Landscapes with Data Structures and Algorithms.
                   </div>
                   <div className=" h-full flex flex-col justify-end ">
                     <button className="h-6 w-7 rounded-full border item-center flex justify-center">
@@ -204,15 +169,18 @@ const RefCard = ({
       <div className="space-y-3 mt-2">
         <div>
           <h3 className="font-regular">Decription About the Course</h3>
-          <p>{desc1}</p>
+          <br/>
+          <p>Blockchain technology is a decentralized and distributed ledger system that securely records and verifies transactions across a network of computers. It operates on the principle of consensus, where multiple nodes in the network agree on the validity of transactions before they are added to the blockchain.</p>
         </div>
         <div>
-          <h3 className="font-regular">Decription About the Course</h3>
-          <p>{desc2}</p>
+          
+          <br/>
+          <p>The core components of blockchain include blocks, cryptographic hashing, consensus algorithms, and smart contracts. Each block contains a batch of transactions, a timestamp, and a cryptographic hash of the previous block. This linking of blocks through hashes creates a chain, ensuring the integrity and immutability of the data. Any attempt to alter data in a block would require changing all subsequent blocks, making it computationally infeasible and providing a high level of security against tampering.</p>
         </div>
         <div>
-          <h3 className="font-regular">Decription About the Course</h3>
-          <p>{desc3}</p>
+
+          <br/>
+          <p>Smart contracts, which are self-executing contracts with predefined rules, automate and enforce agreements on the blockchain. They enable decentralized applications (dApps) to execute transactions and enforce rules without the need for intermediaries, reducing costs and increasing efficiency.</p>
         </div>
       </div>
 
@@ -315,32 +283,32 @@ const FAQItem = ({ question, answer, isOpened = false, onClick }) => {
 
 const FAQContent = [
   {
-    question: "What is Kriya?",
+    question: "What courses do you teach in Computer Science and Engineering?",
     answer:
       "Kriya is the largest technical symposium conducted by PSG College of Technology. The Students Union is ecstatic to spread the aura of knowledge and healthy competition through Kriya by carrying out 35+ Events, 12+ Workshops and 4 Technical Paper Presentations that encompasses an array of engineering streams, Kriya brings together the savviest brains on the planet, from proficient scholars to dexterous techno-wizards, to who’s who of the industrial domain, and also eminent leaders from different walks of life, to enrich and aggrandize the minds of participating students.",
   },
   {
-    question: "Who can participate in Kriya?",
+    question: "How can students schedule appointments or office hours with you?",
     answer:
       "The contest is open for all Undergraduate and Postgraduate students from AICTE approved Technical Higher Educational Institutions of India.",
   },
   {
-    question: "What are the benefits of taking part in Kriya ?",
+    question: "Are there any research projects or areas of focus you are currently working on?",
     answer:
       "Kriya is a national level technical fest where participants get an opportunity to compete in various events with students from across the country and win attractive cash prizes. Kriya is a also platform for participants to stay at the forefront of technical advancements through its industry-led workshops and technical paper presentations. ",
   },
   {
-    question: "What is the fee to participate in Kriya?",
+    question: "What resources or tools do you recommend for students interested in CSE?",
     answer:
       "The general registration fee is Rs. 150 for PSG Tech students and Rs. 200 for students from other colleges. No separate registration fee is required to participate in each event. However, participants have to pay separately to participate in workshops and technical paper presentations.",
   },
   {
-    question: "Where can I stay if I want to participate in Kriya?",
+    question: "Can you provide guidance on internships, job placements, or career opportunities in the field of Computer Science and Engineering?",
     answer:
       "Accommodation is available on a first come first serve basis. The cost of on-campus accommodation be Rs. 150 per night. Food is available at the cost of Rs. 50 per meal.",
   },
   {
-    question: "Do we have to pay separately for attending workshops?",
+    question: "What are your office hours and preferred methods of communication for students seeking academic support or guidance?",
     answer:
       "Yes, we have to pay separately for each workshop. The general registration fee doesn’t cover workshop participation.",
   },

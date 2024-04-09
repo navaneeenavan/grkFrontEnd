@@ -18,7 +18,7 @@ const Navbar = () => {
           <div className="md:flex gap-[3px] pl-[11px] pr-[11px] font-200 sm:hidden xsm:hidden">
           <span>GRK</span>
             <a href="#intro">
-              <span className="gap-[3px] pl-[11px] pr-[11px] rounded-[15px] hover:bg-[#ebeaea] hover:cursor-pointer">
+              <span className="gap-[3px] pl-[11px] pr-[11px] rounded-[15px] hover:bg-[#ebeaea] hover:cursor-pointer ">
                 Intro
               </span>
             </a>
