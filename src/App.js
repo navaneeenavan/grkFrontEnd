@@ -17,25 +17,30 @@ import { FaLinkedin } from "react-icons/fa";
 import Lectures from "./Lectures.js";
 function App() {
   return (
-    <div className=" w-full flex flex-col overflow-hidden">
+    <div id="Home" className=" w-full flex flex-col overflow-hidden">
       <Navbar />
       <div className="px-4 md:px-10 space-y-5">
-        <Hero className="mt-10" />
+        <Hero  className="mt-10" />
 
-        <div className="flex flex-col justify-center">
+        <div id="Research" className="flex flex-col justify-center mt-32">
           <div className="text-[#222222]">Recent Works</div>
           <div className="text-3xl text-black">
             Research & Development loremEu loremEu loremEu
           </div>
         </div>
+    
+    <div className="space-y-20">
+    <Card  className="ml-10" />
+        <Card className="ml-10" />
+        <Card className="ml-10" />
+        <Card className="ml-10" />
+        <Card className="ml-10" />
+    </div>
+      
 
-        <Card className="ml-10" />
-        <Card className="ml-10" />
-        <Card className="ml-10" />
-        <Card className="ml-10" />
-        <Card className="ml-10" />
+        
       </div>
-      <div className="flex flex-col justify-center px-4 md:px-10 mt-10">
+      <div className="flex flex-col justify-center px-4 md:px-20 mt-20">
         <div className="text-[#222222]">Connections - Currency</div>
         <div className="text-3xl text-black">What People Say about me !</div>
       </div>
@@ -70,23 +75,23 @@ function App() {
             }
           />
         </Marquee>
-        <div className="flex flex-col justify-center px-4 md:px-10 mt-10 mb-10">
+        <div id ="About" className="flex flex-col justify-center px-4 md:px-10 mt-10 mb-10">
           <div className="text-[#222222]">From 1975 - Present</div>
           <div className="text-3xl text-black">About Me ! </div>
           <div className="mt-10">
             <About />
           </div>
         </div>
-        <div className="flex flex-col justify-center px-4 md:px-10 mt-10 mb-10">
+        <div id ="Lectures" className="flex flex-col justify-center px-4 md:px-10 mt-10 mb-10">
           <div className="text-[#222222]">Irure non magna veniam qui officia occaecat fugiat ex incididunt voluptate deserunt.</div>
           <div className="text-3xl text-black">Lectures and Classes </div>
-          <div className="mt-10">
+          <div  className="mt-10">
             <Lectures />
           </div>
         </div>
         <div className="w-full flex flex-col justify-center items-center mt-10 space-y-2 mb-20">
             <div className="flex">
-              Crafted With  Respect using 
+              Tailored using 
               <div className="space-x-2 flex ml-2 items-center justify-center">
                 <FaReact color="sky-blue" /> <RiSupabaseFill color="green"/>
               </div>
@@ -97,6 +102,7 @@ function App() {
               <button onClick={()=> window.open("https://www.linkedin.com/in/navaneetha-krishnan-k-s-5b7994224/")}><FaLinkedin size={20} /></button>
             </div>
           </div>
+        <OverlayButton/>
       </div>
     </div>
   );

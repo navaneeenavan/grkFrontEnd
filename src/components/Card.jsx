@@ -5,7 +5,7 @@ import { IoIosHeart } from "react-icons/io";
 function Card() {
   const [like, setLike] = useState(false);
   return (
-    <div className="flex flex-col h-full w-full border border-zinc-500 rounded-lg px-5 py-2">
+    <div className="flex flex-col h-full w-full bg-white shadow-lg rounded-lg px-5 py-2">
       <div className="text-black text-xl lg:text-3xl ">
         Cloud Sourcing (this is a title)
       </div>
