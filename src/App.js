@@ -71,7 +71,7 @@ function App() {
   ))}
 </div>
       </div>
-      <div className="flex flex-col justify-center px-4 md:px-20 mt-5 lg:mt-20">
+      <div className="flex flex-col justify-center px-4 md:px-20 mt-5 xjlg:mt-20">
         <div className="text-[#222222]">Connections - Currency</div>
         <div className="text-3xl text-black">What People Say about me !</div>
       </div>

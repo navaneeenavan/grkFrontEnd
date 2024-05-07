@@ -5,6 +5,5 @@ export default function About(){
         <div id = "about" className="">
            <VerticalAbout/>
         </div>
-        
     )
 }
