@@ -33,7 +33,7 @@ function Hero() {
 
   return (
     <div className="mt-32 w-full flex flex-col  p-5 font-font1  items-center space-y-10">
-      <div className="rounded-3xl  shadow-sm border border-gray-300 px-3 text-black text-sm">
+      <div className="w-auto rounded-3xl  shadow-sm border border-gray-300 px-3 py-3 text-black text-sm">
         <span className="text-sm text-gray-500 ">
           {notification}
           {" -> "}{" "}
@@ -41,7 +41,7 @@ function Hero() {
       </div>
       <div>
         <div className="flex flex-col lg:flex-row">
-          <div className="text-4xl max-w-[1000px] text-left text-[#222222] ">
+          <div className="text-3xl lg:text-4xl max-w-[1000px] text-left text-[#222222] ">
             {mainLine}
             {"->"}{" "}
           </div>

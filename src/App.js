@@ -61,7 +61,7 @@ function App() {
               data // Renamed the parameter to avoid confusion with the variable name
             ) => (
               <Card
-                id={data.id} // Ensure each Card has a unique key prop
+                id={data.id} 
                 className="ml-10"
                 title={data.title}
                 Authors={data.Authors}

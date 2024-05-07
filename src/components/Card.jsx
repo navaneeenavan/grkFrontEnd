@@ -43,10 +43,10 @@ function Card({title,Authors,description1,description2,likes,Tags, id}) {
       <div className="text-gray text-xs lg:text-md mt-1">
       {Authors}
       </div>
-      <div className="flex flex-col  lg:flex-row space-x-3 mt-3 text-black">
+      <div className="w-full  item-start lg:space-y-0 flex flex-row space-x-3 mt-3 text-black">
         {Tags?.map((val)=>
         (
-            <div className="flex  text-xs h-5 w-max rounded-3xl items-center  p-2 border border-zinc-300 justify-center" >
+            <div className="flex text-xs h-5 w-max rounded-3xl items-center  p-2 border border-zinc-300 justify-center" >
             {val.title}
           </div>
          ) )

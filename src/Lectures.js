@@ -198,7 +198,7 @@ const RefCard = ({
       </div> */}
       <div className="flex space-x-3 mt-10">
         <input
-          className="w-full h-12 pl-3 text-left shadow-lg mt-3 rounded-xl text-sm lg:text-xl"
+          className="w-full h-12 pl-3 text-left shadow-lg mt-3 rounded-xl text-xs lg:text-xl"
           placeholder="Enter Your Question (Doubt) !"
         ></input>
         <button className="w-24 h-12 border rounded-xl shadow-lg mt-3 bg-gray-200 ">

@@ -6,7 +6,7 @@ function NavBar() {
          
            <AiOutlineDingtalk size={55} className="text-gray-600"/>
            <div className="lg:flex ml-5 "> 
-            <ul className="space-x-5 text-black flex flex-row text-xs  font-regular lg:text-lg" >
+            <ul className="space-x-5 text-black flex flex-row text-sm  font-regular lg:text-lg" >
                 <li className="hover:cursor-pointer"
                 onClick={(e) => {
                     const element = document.getElementById("Home");
