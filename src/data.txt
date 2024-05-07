@@ -1,0 +1,70 @@
+{status === "dataStructures" && (
+          <>
+            <div className="px-10 mb-10">
+              <div className="text-xl font-regular mt-2">
+                Course Name : Data Structures and Algorithms
+              </div>
+              <div className="space-y-10 mt-2">
+                <div>
+                  <h3 className="font-regular">Description About the Course</h3>
+                  <br></br>
+                  <p>
+                    Data structures are methods of organizing and storing data
+                    efficiently, such as arrays, linked lists, stacks, queues,
+                    trees, and graphs. Algorithms are step-by-step procedures
+                    for solving computational problems, including sorting,
+                    searching, graph traversal, dynamic programming, recursion,
+                    and divide-and-conquer techniques. Understanding these
+                    concepts is essential for efficient coding and
+                    problem-solving in computer science.
+                  </p>
+                </div>
+              </div>
+
+              <div className="w-full h-auto lg:space-x-5 space-y-3 flex flex-col lg:flex-row justify-between mt-7">
+                <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
+                  <div className="font-regular ml-10">
+                    Unlocking Efficiency: Harnessing Data Structures and
+                    Algorithms for Optimal Performance.
+                  </div>
+                  <div className=" h-full flex flex-col justify-end ">
+                    <button className="h-6 w-7 rounded-full border item-center flex justify-center">
+                      <MdArrowOutward
+                        classNam="item-center flex justify-center"
+                        size={20}
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
+                  <div className="font-regular ml-10">
+                    Building Tomorrow's Solutions Today: Empowering Innovation
+                    Through Data Structures and Algorithms.
+                  </div>
+                  <div className=" h-full flex flex-col justify-end ">
+                    <button className="h-6 w-7 rounded-full border item-center flex justify-center">
+                      <MdArrowOutward
+                        classNam="item-center flex justify-center"
+                        size={20}
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
+                  <div className="font-regular ml-10">
+                    From Complexity to Clarity: Navigating Digital Landscapes
+                    with Data Structures and Algorithms.
+                  </div>
+                  <div className=" h-full flex flex-col justify-end ">
+                    <button className="h-6 w-7 rounded-full border item-center flex justify-center">
+                      <MdArrowOutward
+                        classNam="item-center flex justify-center"
+                        size={20}
+                      />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}

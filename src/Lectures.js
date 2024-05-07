@@ -1,12 +1,32 @@
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { MdArrowOutward } from "react-icons/md";
+import { supaBase } from "./SupaBaseClient";
+
+const FetchVal = async () => {
+  try {
+    const { data, error } = await supaBase.from("courses").select("*").limit(10);
+    if (error) {
+      throw error;
+    }
+  
+    return data;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};
+
+
+
 const inital_State = {
   dataStructure: true,
   blockChain: false,
   CryptoGraphy: false,
-  status :  "dataStructures",
-};
+  status :  "",
+  datas : []
+}
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "dataStructures":
@@ -16,6 +36,7 @@ const reducer = (state, action) => {
         blockChain: false,
         CryptoGraphy: false,
         status: "dataStructures",
+        datas : action.payload
       };
     case "blockChain":
       return {
@@ -24,6 +45,7 @@ const reducer = (state, action) => {
         blockChain: true,
         CryptoGraphy: false,
         status: "blockChain",
+        datas : action.payload
       };
     case "CryptoGraphy":
       return {
@@ -32,17 +54,36 @@ const reducer = (state, action) => {
         blockChain: false,
         CryptoGraphy: true,
         status: "CryptoGraphy",
+        datas : action.payload
       };
 
     default: {
+      
       throw new Error("invalid Option");
     }
   }
 };
 function Lectures() {
-  const [{ dataStructure, blockChain, CryptoGraphy, status }, dispatch] =
-    useReducer(reducer, inital_State);
+  const [data, setData] = useState([]);
 
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedData = await FetchVal();
+        setData(fetchedData);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+  const [{ dataStructure, blockChain, CryptoGraphy, status, datas}, dispatch] =
+    useReducer(reducer, inital_State);
+    const [loading, setLoading] = useState(false);
   return (
     <div className=" lg:px-36 flex flex-col">
       
@@ -52,97 +93,42 @@ function Lectures() {
             className={`w-full text-sm md:text-xl px-3 rounded-full items-center  text-center text-black h-10 flex justify-center ${
               dataStructure ? "bg-black bg-opacity-5 " : "text-black"
             } `}
-            onClick={() => dispatch({ type: "dataStructures" })}
+            onClick={() => dispatch({ type: "dataStructures", payload : data[0] })}
           >
-            Data Structures
+            Block Chain 
           </li>
           <li
             className={`w-full text-sm md:text-xl  px-3 rounded-full items-center  text-center text-black h-10 flex justify-center  ${
               blockChain ? "bg-black bg-opacity-5 " : ""
             } `}
-            onClick={() => dispatch({ type: "blockChain" })}
+            onClick={() => dispatch({ type: "blockChain", payload : data[1] })}
           >
-            Block Chain
+            Data Structures
           </li>
           <li
             className={`w-full text-sm md:text-xl px-3 rounded-full items-center  text-center text-black h-10  flex justify-center  ${
               CryptoGraphy ? "bg-black bg-opacity-5 " : ""
             } `}
-            onClick={() => dispatch({ type: "CryptoGraphy" })}
+            onClick={() => dispatch({ type: "CryptoGraphy", payload : data[2]})}
           >
             CryptoGraphy
           </li>
         </ul>
       </div>
-      <div className="h-full w-full border border-1 mt-3 rounded-2xl  items-center mb-10">
+      <div className={`transition-all ease-in delay-200 h-full w-full ${status && "border border-1"} mt-3 rounded-2xl  items-center mb-10`}>
         {status === "dataStructures" && (
           <>
-            <div className="px-10 mb-10">
-              <div className="text-xl font-regular mt-2">
-                Course Name : Data Structures and Alogorithms
-              </div>
-              <div className="space-y-10 mt-2">
-                <div>
-                  <h3 className="font-regular">Decription About the Course</h3>
-                  <br></br>
-                  <p>    
-                  Data structures are methods of organizing and storing data efficiently, such as arrays, linked lists, stacks, queues, trees, and graphs. Algorithms are step-by-step procedures for solving computational problems, including sorting, searching, graph traversal, dynamic programming, recursion, and divide-and-conquer techniques. Understanding these concepts is essential for efficient coding and problem-solving in computer science.
-                  </p>
-                </div>
-              </div>
-
-              <div className="w-full h-auto lg:space-x-5 space-y-3 flex flex-col lg:flex-row justify-between mt-7">
-                <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
-                  <div className="font-regular ml-10">
-                  Unlocking Efficiency: Harnessing Data Structures and Algorithms for Optimal Performance.
-                  </div>
-                  <div className=" h-full flex flex-col justify-end ">
-                    <button className="h-6 w-7 rounded-full border item-center flex justify-center">
-                      <MdArrowOutward
-                        classNam="item-center flex justify-center"
-                        size={20}
-                      />
-                    </button>
-                  </div>
-                </div>
-                <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
-                  <div className="font-regular ml-10">
-                  Building Tomorrow's Solutions Today: Empowering Innovation Through Data Structures and Algorithms.
-                  </div>
-                  <div className=" h-full flex flex-col justify-end ">
-                    <button className="h-6 w-7 rounded-full border item-center flex justify-center">
-                      <MdArrowOutward
-                        classNam="item-center flex justify-center"
-                        size={20}
-                      />
-                    </button>
-                  </div>
-                </div>
-                <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
-                  <div className="font-regular ml-10">
-                  From Complexity to Clarity: Navigating Digital Landscapes with Data Structures and Algorithms.
-                  </div>
-                  <div className=" h-full flex flex-col justify-end ">
-                    <button className="h-6 w-7 rounded-full border item-center flex justify-center">
-                      <MdArrowOutward
-                        classNam="item-center flex justify-center"
-                        size={20}
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+             <RefCard name={datas?.name} desc1={datas?.desc1} desc2={datas?.desc2} desc3={datas?.desc3} links={datas?.Link}/>
           </>
         )}
         {status === "blockChain" && (
           <>
-            <RefCard />
+             <RefCard name={datas?.name} desc1={datas?.desc1} desc2={datas?.desc2} desc3={datas?.desc3} links={datas?.Link}/>
           </>
         )}
         {status === "CryptoGraphy" && (
           <>
-            <RefCard />
+            <RefCard name={datas?.name} desc1={datas?.desc1} desc2={datas?.desc2} desc3={datas?.desc3} links={datas?.Link}/>
           </>
         )}
       </div>
@@ -155,12 +141,7 @@ const RefCard = ({
   desc1,
   desc2,
   desc3,
-  l1name,
-  l1,
-  l2name,
-  l2,
-  l3name,
-  l3,
+  links
 }) => {
   const [faqOpenIdx, setFaqOpenIdx] = useState(-1);
   return (
@@ -168,61 +149,40 @@ const RefCard = ({
       <div className="text-xl font-regular mt-2">Course Name : {name}</div>
       <div className="space-y-3 mt-2">
         <div>
-          <h3 className="font-regular">Decription About the Course</h3>
+          <h3 className="font-regular">Description About the Course</h3>
           <br/>
-          <p>Blockchain technology is a decentralized and distributed ledger system that securely records and verifies transactions across a network of computers. It operates on the principle of consensus, where multiple nodes in the network agree on the validity of transactions before they are added to the blockchain.</p>
+          <p>{desc1}</p>
         </div>
         <div>
           
           <br/>
-          <p>The core components of blockchain include blocks, cryptographic hashing, consensus algorithms, and smart contracts. Each block contains a batch of transactions, a timestamp, and a cryptographic hash of the previous block. This linking of blocks through hashes creates a chain, ensuring the integrity and immutability of the data. Any attempt to alter data in a block would require changing all subsequent blocks, making it computationally infeasible and providing a high level of security against tampering.</p>
+          <p>{desc2}</p>
         </div>
         <div>
 
           <br/>
-          <p>Smart contracts, which are self-executing contracts with predefined rules, automate and enforce agreements on the blockchain. They enable decentralized applications (dApps) to execute transactions and enforce rules without the need for intermediaries, reducing costs and increasing efficiency.</p>
+          <p>{desc3}</p>
         </div>
       </div>
-
-      <div className="w-full h-auto lg:space-x-5 flex flex-col lg:flex-row lg:justify-between justify-center space-y-5 lg:space-y-0 mt-7">
+      {links?.map((link)=>(
+        <div className="w-full h-auto lg:space-x-5 flex flex-col lg:flex-row lg:justify-between justify-center space-y-5 lg:space-y-0 mt-7">
         <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2 ">
-          <div className="font-regular ml-10">{l1name}</div>
+          <div className="font-regular ml-10">{link.name}</div>
           <div className=" h-full flex flex-col justify-end ">
             <button className="h-6 w-7 rounded-full border item-center flex justify-center">
               <MdArrowOutward
                 classNam="item-center flex justify-center"
                 size={20}
-                onClick={() => window.open(l1)}
+                onClick={() => window.open(link.link)}
               />
             </button>
           </div>
         </div>
-        <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
-          <div className="font-regular ml-10">{l2name}</div>
-          <div className=" h-full flex flex-col justify-end ">
-            <button className="h-6 w-7 rounded-full border item-center flex justify-center">
-              <MdArrowOutward
-                classNam="item-center flex justify-center"
-                size={20}
-                onClick={() => window.open(l2)}
-              />
-            </button>
-          </div>
-        </div>
-        <div className="bg-white h-auto w-full shadow-lg rounded-xl flex justify-between p-2">
-          <div className="font-regular ml-10">{l3name}</div>
-          <div className=" h-full flex flex-col justify-end ">
-            <button className="h-6 w-7 rounded-full border item-center flex justify-center">
-              <MdArrowOutward
-                classNam="item-center flex justify-center"
-                size={20}
-                onClick={() => window.open(l3)}
-              />
-            </button>
-          </div>
-        </div>
+        
       </div>
-      <div className="w-full flex items-center justify-center">
+      ))}
+      
+      {/* <div className="w-full flex items-center justify-center">
         <div className="flex flex-col items-center w-full lg:w-[60vw] mt-16">
           {FAQContent.map((item, index) => (
             <FAQItem
@@ -235,8 +195,8 @@ const RefCard = ({
             />
           ))}
         </div>
-      </div>
-      <div className="flex space-x-3">
+      </div> */}
+      <div className="flex space-x-3 mt-10">
         <input
           className="w-full h-12 pl-3 text-left shadow-lg mt-3 rounded-xl text-sm lg:text-xl"
           placeholder="Enter Your Question (Doubt) !"

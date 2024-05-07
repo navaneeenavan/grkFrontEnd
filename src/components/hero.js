@@ -1,23 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
-function hero() {
-  const handlecreate = () => {};
+import { supaBase } from "../SupaBaseClient";
+function Hero() {
+  const [Rdata, setRdata] = useState([]);
+  const [loading, setLoading] = useState(null);
+
+  useEffect(() => {
+    async function getProducts() {
+      try {
+        const { data, error } = await supaBase
+          .from("General")
+          .select("*")
+          .limit(10);
+        if (error) {
+          throw error;
+        }
+
+        if (data != null) {
+          setLoading(true);
+          setRdata(data);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getProducts();
+  }, []);
+  
+  const mainLine = Rdata[0]?.MainLine;
+  const notification = Rdata[0]?.Notification;
+
   return (
     <div className="mt-32 w-full flex flex-col  p-5 font-font1  items-center space-y-10">
       <div className="rounded-3xl  shadow-sm border border-gray-300 px-3 text-black text-sm">
-        <span className="text-sm text-gray-500 ">Oct21,2023 </span>My New
-        Research Paper was launched{" -> "}
+        <span className="text-sm text-gray-500 ">
+          {notification}
+          {" -> "}{" "}
+        </span>
       </div>
       <div>
         <div className="flex flex-col lg:flex-row">
           <div className="text-4xl max-w-[1000px] text-left text-[#222222] ">
-          G R Karpagam is a Professor with 26 years of experience in the Department of Computer Science and Engineering at PSG College of Technology. Her research interest includes areas related to Artificial Intelligence, Machine Learning, Service Oriented Architecture and Blockchain.{"->"}{" "}
+            {mainLine}
+            {"->"}{" "}
           </div>
           <div className=" text-left text-xl  text-gray-500 mt-5 lg:mt-0">
-            
-            <span className="text-[#222222]">
-              Mile to go Until I Sleep
-            </span>{" "}
+            <span className="text-[#222222]">Mile to go Until I Sleep</span>{" "}
             This is <span className="text-black">Dr G R Karpagam </span> For
             you...
           </div>
@@ -26,19 +55,16 @@ function hero() {
         <div className="w-full justify-start mt-5">
           <button
             className=" border border-gray-400 text-gray-500 items-center rounded-3xl w-24 px-2 text-nowrap"
-            onclick={handlecreate}
           >
-            Learn More
+            <a href="https://psgtech.ac.in">Learn More</a>
           </button>
         </div>
       </div>
-      
-     
     </div>
   );
 }
 
-export default hero;
+export default Hero;
 
 const Sponsors = ({ imgurl, title }) => {
   return (

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/tailwind.css";
 import Navbar from "./components/NavBar.jsx";
 import Hero from "./components/hero";
 import Research from "./components/research";
 import Activity from "./components/activity";
-import About from "./components/about";
+import About from "./components/About.js";
 import Footer from "./components/footer";
 import OverlayButton from "./components/overlay";
 import Card from "./components/Card.jsx";
@@ -16,36 +16,66 @@ import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import Lectures from "./Lectures.js";
 import Accordian from "./Accordian.js";
+import { supaBase } from "./SupaBaseClient.js";
 function App() {
+  const [Rdata, setRdata] = useState([]);
+  const [loading, setLoading] = useState(null);
+
+  useEffect(() => {
+    async function getProducts() {
+      try {
+        const { data, error } = await supaBase
+          .from("research")
+          .select("*")
+          .limit(10);
+        if (error) {
+          throw error;
+        }
+
+        if (data != null) {
+          setLoading(true);
+          setRdata(data);
+
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getProducts();
+  }, []);
+
   return (
     <div id="Home" className=" w-full flex flex-col overflow-hidden">
       <Navbar />
       <div className="px-4 md:px-10 space-y-5">
-        <Hero  className="mt-10" />
+        <Hero className="mt-10" />
 
         <div id="Research" className="flex flex-col justify-center mt-32">
           <div className="text-[#222222]">Recent Works</div>
-          <div className="text-3xl text-black">
-            Research & Development
-          </div>
+          <div className="text-3xl text-black">Research & Development</div>
         </div>
-    
-    <div className="space-y-20">
-    <Card  className="ml-10" />
-        {/* <Card className="ml-10" />
-        <Card className="ml-10" />
-        <Card className="ml-10" />
-        <Card className="ml-10" /> */}
-    </div>
-      
 
-        
+        <div className="space-y-20">
+  {Rdata.map((data) => ( // Renamed the parameter to avoid confusion with the variable name
+    <Card
+      id={data.id} // Ensure each Card has a unique key prop
+      className="ml-10"
+      title={data.title}
+      Authors={data.Authors}
+      Tags={data.Tags}
+      description1={data.description1}
+      description2={data.description2}
+      likes={data.likes}
+    />
+  ))}
+</div>
       </div>
-      <div className="flex flex-col justify-center px-4 md:px-20 mt-20">
+      <div className="flex flex-col justify-center px-4 md:px-20 mt-5 lg:mt-20">
         <div className="text-[#222222]">Connections - Currency</div>
         <div className="text-3xl text-black">What People Say about me !</div>
       </div>
-      <div className="w-full px-0 mt-10">
+      <div className="w-full px-0 mt-5 lg:mt-10">
         <Marquee>
           <Marque
             name={"Suvan Sathyendira B"}
@@ -76,36 +106,53 @@ function App() {
             }
           />
         </Marquee>
-        <div id ="About" className="flex flex-col justify-center px-4 md:px-10 mt-10 mb-10">
+        <div
+          id="About"
+          className="flex flex-col justify-center px-4 md:px-10 mt-10 mb-10"
+        >
           <div className="text-[#222222]">From 1975 - Present</div>
           <div className="text-3xl text-black">About Me ! </div>
           <div className="mt-10">
             <About />
           </div>
         </div>
-        <div id ="Lectures" className="flex flex-col justify-center px-4 md:px-10 mt-10 mb-10">
+        <div
+          id="Lectures"
+          className="flex flex-col justify-center px-4 md:px-10 mt-10 mb-10"
+        >
           <div className="text-[#222222]"></div>
           <div className="text-3xl text-black">Lectures and Classes </div>
-          <div  className="mt-10">
+          <div className="mt-10">
             <Lectures />
           </div>
         </div>
 
-
         <div className="w-full flex flex-col justify-center items-center mt-10 space-y-2 mb-20">
-            <div className="flex">
-              Tailored using 
-              <div className="space-x-2 flex ml-2 items-center justify-center">
-                <FaReact color="sky-blue" /> <RiSupabaseFill color="green"/>
-              </div>
-            </div>
-            <div>Navaneetha Krishnan K S</div>
-            <div className="flex space-x-3">
-              <button onClick={()=> window.open("https://github.com/navaneeenavan")}><FaGithub size={20} color={"black"}/></button>
-              <button onClick={()=> window.open("https://www.linkedin.com/in/navaneetha-krishnan-k-s-5b7994224/")}><FaLinkedin size={20} /></button>
+          <div className="flex">
+            Tailored with
+            <div className="space-x-2 flex ml-2 items-center justify-center">
+              <FaReact color="sky-blue" /> <RiSupabaseFill color="green" />
             </div>
           </div>
-        <OverlayButton/>
+          <div>Navaneetha Krishnan K S</div>
+          <div className="flex space-x-3">
+            <button
+              onClick={() => window.open("https://github.com/navaneeenavan")}
+            >
+              <FaGithub size={20} color={"black"} />
+            </button>
+            <button
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/navaneetha-krishnan-k-s-5b7994224/"
+                )
+              }
+            >
+              <FaLinkedin size={20} />
+            </button>
+          </div>
+        </div>
+        <OverlayButton />
       </div>
     </div>
   );
@@ -116,12 +163,12 @@ export default App;
 const Marque = ({ name, role, desc, pic }) => {
   return (
     <div className="flex flex-col h-96 w-96 ml-16 text-justify">
-      <div className="h-10 w-20 rounded-full">
+      {/* <div className="h-10 w-20 rounded-full">
         <img src="{pic}" alt="pic" />
-      </div>
+      </div> */}
       <div>{desc}</div>
-      <div className="w-full justify-end flex flex-col mt-10">
-        {name}
+      <div className="w-full justify-end flex flex-col mt-10 ">
+        <span className="font-bold">{name}</span>
         <span className="text-[#222222]">{role}</span>
       </div>
     </div>

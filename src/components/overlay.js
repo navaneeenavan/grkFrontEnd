@@ -6,6 +6,10 @@ const OverlayButton = () => {
   const toggleOverlay = () => {
     setIsOpen(!isOpen);
   };
+  const handleSend = () => {
+    setIsOpen(!isOpen);
+    window.open("mailto:grk.cse@psgtech.ac.in")
+  };
 
   return (
     <div className="xsm:fixed md:bottom-6 md:right-6 sm:bottom-8 sm:right-8 xsm:bottom-4 xsm:right-4">
@@ -33,25 +37,19 @@ const OverlayButton = () => {
           style={{ transformOrigin: "top", transform: "scaleY(1)" }}
         >
           <ul className="list-none p-4 w-[300px]">
-            <li className=" py-2 px-4" onClick={toggleOverlay}>
+            <li className=" py-2 px-4" onClick={handleSend}>
               <div>
-                <h3 className="font-bold">Facing issues ma'am ?</h3>
+                <h3 className="font-bold">Need to Contact ma'am ?</h3>
                 <span>We normally reply within 12 hours.</span>
               </div>
             </li>
             <hr></hr>
             <li
               className="hover:bg-gray-100 py-2 px-4 cursor-pointer"
-              onClick={toggleOverlay}
+              onClick={handleSend}
             >
               Send a Message
               <span className=" float-right font-bold">&rarr;</span>
-            </li>
-            <li
-              className="hover:bg-gray-100 py-2 px-4 cursor-pointer"
-              onClick={toggleOverlay}
-            >
-              Book a Call<span className=" float-right font-bold">&rarr;</span>
             </li>
           </ul>
         </div>
