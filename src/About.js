@@ -1,4 +1,4 @@
-import VerticalAbout from "../VerticalTimeLIne";
+import VerticalAbout from "./VerticalTimeLIne";
 
 export default function About(){
     return(

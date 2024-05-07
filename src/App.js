@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 import "./styles/tailwind.css";
 import Navbar from "./components/NavBar.jsx";
 import Hero from "./components/hero";
-import Research from "./components/research";
-import Activity from "./components/activity";
-import About from "./components/About.js";
-import Footer from "./components/footer";
+
+import About from "./About.js";
+
 import OverlayButton from "./components/overlay";
 import Card from "./components/Card.jsx";
-import RegistrationForm from "./post.js";
+
 import Marquee from "react-fast-marquee";
 import { FaReact } from "react-icons/fa";
 import { RiSupabaseFill } from "react-icons/ri";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import Lectures from "./Lectures.js";
-import Accordian from "./Accordian.js";
+
 import { supaBase } from "./SupaBaseClient.js";
 function App() {
   const [Rdata, setRdata] = useState([]);
@@ -57,19 +56,23 @@ function App() {
         </div>
 
         <div className="space-y-20">
-  {Rdata.map((data) => ( // Renamed the parameter to avoid confusion with the variable name
-    <Card
-      id={data.id} // Ensure each Card has a unique key prop
-      className="ml-10"
-      title={data.title}
-      Authors={data.Authors}
-      Tags={data.Tags}
-      description1={data.description1}
-      description2={data.description2}
-      likes={data.likes}
-    />
-  ))}
-</div>
+          {Rdata.map(
+            (
+              data // Renamed the parameter to avoid confusion with the variable name
+            ) => (
+              <Card
+                id={data.id} // Ensure each Card has a unique key prop
+                className="ml-10"
+                title={data.title}
+                Authors={data.Authors}
+                Tags={data.Tags}
+                description1={data.description1}
+                description2={data.description2}
+                likes={data.likes}
+              />
+            )
+          )}
+        </div>
       </div>
       <div className="flex flex-col justify-center px-4 md:px-20 mt-5 xjlg:mt-20">
         <div className="text-[#222222]">Connections - Currency</div>
